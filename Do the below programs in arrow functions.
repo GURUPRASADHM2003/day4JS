@@ -1,0 +1,82 @@
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+
+
+//1.Print odd numbers in an array:
+
+let printOddNumbers = arr => {
+    arr.forEach(num => {
+        if (num % 2 !== 0) {
+            console.log(num);
+        }
+    });
+};
+
+printOddNumbers([1, 2, 3, 4, 5]);
+
+
+//2.Convert all the strings to title caps in a string array:
+
+let titleCaps = arr => {
+    return arr.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+};
+
+console.log(titleCaps(["hello", "world"]));
+
+
+//3.Sum of all numbers in an array:
+
+let sumArray = arr => {
+    return arr.reduce((acc, curr) => acc + curr, 0);
+};
+
+console.log(sumArray([1, 2, 3, 4, 5]));
+
+
+//4.Return all the prime numbers in an array:
+e
+let isPrime = num => {
+    if (num <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+};
+
+let primeNumbers = arr => {
+    return arr.filter(num => isPrime(num));
+};
+
+console.log(primeNumbers([1, 2, 3, 4, 5]));
+
+
+//5.Return all the palindromes in an array:
+
+let isPalindrome = str => {
+    return str === str.split('').reverse().join('');
+};
+
+let palindromeArray = arr => {
+    return arr.filter(str => isPalindrome(str));
+};
+
+console.log(palindromeArray(["madam", "hello", "level"]));
+
+
+  //end-here
+});
+
